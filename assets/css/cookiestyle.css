@@ -1,0 +1,372 @@
+/*===== FONT =====*/
+@font-face {
+  font-family: F9;
+  src: url('../fonts/AntiqueOliveStd-NordItalic.woff2');
+  }
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  /*========== Colors ==========*/
+  --first-color: #26A69A;
+  --first-color-lighter: #ECF3F2;
+  --title-color: #11443F;
+  --text-color: #5B7B78;
+  --body-color: #aaa;
+  /*========== Font and typography ==========*/
+  
+  --biggest-font-size: 3rem;
+  --big-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 5.5rem;
+    --big-font-size: 2rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*========== BASE ==========*/
+html {
+  scroll-behavior: smooth;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'F9';
+  font-size: var(--normal-font-size);
+  background-color: #aaa;
+  color: var(--text-color);
+}
+
+h1, h2, ul, p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*========== LAYOUT ==========*/
+.main {
+  position: relative;
+}
+
+.bd-container {
+  max-width: 968px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/*========== HEADER ==========*/
+.header {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: rgba(0, 0, 0, .5);
+}
+
+/*========== NAV ==========*/
+.nav {
+  max-width: 968px;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__menu{
+  font-family: 'Poppins';
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1.5rem;
+    background-color: var(--first-color-lighter);
+    border-radius: 1rem;
+    transition: .4s;
+  }
+}
+
+.nav__logo, .nav__toggle {
+  color: #000;
+  font-size: 40px;
+}
+
+.nav__link {
+  color: var(--first-color-dark);
+  font-weight: var(--font-medium);
+}
+
+.nav__item {
+  margin-bottom: 1.5rem;
+}
+
+.nav__item:nth-child(5){
+  display: none;
+}
+
+.nav__item a{
+  font-weight: var(--font-medium);
+  color: #000;
+}
+.nav__item a:hover{
+  border-bottom: 1px solid #aaa;
+}
+
+.nav__toggle {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Show menu */
+.show-menu {
+  top: calc(var(--header-height) + 1rem);
+  width: 90%;
+}
+
+
+/*=========== FOR MAIN CONTENT =========*/
+.main__container{
+  margin: 2.5rem 0;
+}
+.title, .h2__title{
+  color: #000;
+  padding-bottom: 15px;
+}
+.h1__des, .h2__des{
+  font-family: 'Poppins';
+  color: #000;
+  padding-bottom: 25px;
+}
+.h1__des a{
+  color: rgb(82, 82, 82);
+  font-weight: 699;
+}
+.h1__des a:hover{
+  color: #000;
+  text-decoration: underline;
+}
+.h2__des a{
+  color: rgb(82, 82, 82);
+  font-weight: 699;
+}
+.h2__des a:hover{
+  color: #000;
+  text-decoration: underline;
+}
+
+
+/*========== MEDIA QUERIES ==========*/
+/* For small devices */
+
+@media screen and (max-width: 425px) {
+    .bd-container {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    .nav__logo{
+      font-size: 25px;
+    }
+
+    .nav__toggle{
+      font-size: 25px;
+    }
+
+    .nav__menu{
+      background-color: rgba(0, 0, 0, .95);
+    }
+
+    .nav__list{
+      margin-bottom: 15px;
+    }
+
+    .nav__item {
+      margin-bottom: 10px;
+      margin-top: .9rem;
+    }
+
+    .nav__item:nth-child(1){
+      margin-top: .25rem;
+    }
+
+    .nav__item:nth-child(4){
+      margin-bottom: 15px;
+    }
+
+    .nav__item:nth-child(5){
+      text-align: center;
+      display: inline;
+    }
+
+    .nav__item a{
+      color: #aaa;
+      font-size: 16px;
+    }
+
+    .title, .h2__title{
+      font-size: 20px;
+    }
+    .h1__des, .h2__des{
+      font-size: 12px;
+    }
+    .h1__des a{
+      color: rgb(82, 82, 82);
+      font-weight: 699;
+    }
+    .h1__des a:hover{
+      color: #000;
+      text-decoration: underline;
+    }
+    .h2__des a{
+      color: rgb(82, 82, 82);
+      font-weight: 699;
+    }
+    .h2__des a:hover{
+      color: #000;
+      text-decoration: underline;
+    }
+  }
+
+  
+@media screen and (max-width: 240px/*320px*/){
+  .modal-content .modal-header{
+    padding-bottom: 0;
+  }
+  .modal-title{
+    font-size: 2px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+  }
+  .btn__close{
+    font-size: 20px;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .modal-body .modal-body-title h3{
+    font-size: 15px;
+  }
+  .modal-body-description .description-list{
+    font-size: 8px;
+    margin-left: 10px;
+    margin-right: 0px;
+  }
+
+
+  .header{
+    height: 35px;
+  }
+  .nav__logo{
+    font-size: 20px;
+    padding-bottom: 15px;
+  }
+  .nav__toggle{
+    font-size: 20px;
+    padding-bottom: 12px;
+  }
+  .nav__menu{
+    width: 180px;
+    height: 160px;
+    padding-top: 0;
+  }
+  .show-menu{
+    top: 39px;
+  }
+  .nav__list .nav__item{
+    margin-bottom: 5px;
+    margin-top: 0;
+  }
+  .nav__list .nav__item a{
+    font-size: 10px;
+    margin-top: 0;
+  }
+  .nav__item:nth-child(1){
+    margin-top: 5px;
+  }
+  .nav__item:nth-child(4){
+    margin-bottom: 5px;
+  }
+
+
+  .title{
+    font-size: 14px;
+  }
+  .h1__des{
+    font-size: 10px;
+  }
+  .h2__title{
+    font-size: 12px;
+  }
+  .h2__des{
+    font-size: 10px;
+  }
+}
+
+  
+  @media screen and (min-width: 768px) {
+    .nav {
+      height: calc(var(--header-height) + 1.5rem);
+    }
+    .nav__list {
+      display: flex;
+    }
+    .nav__item {
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
+    .nav__link {
+      color: var(--body-color);
+    }
+    .nav__toggle {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .bd-container {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  /* For tall screens on mobiles y desktop*/
+  @media screen and (min-height: 721px) {
+    .islands {
+      height: 640px;
+    }
+  }
+  
